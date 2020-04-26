@@ -1,7 +1,8 @@
-from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
 from .views import PollQuestionsDetailView, ShortQuestionsDetailView
+from django.urls import path
 
+from .views import PollQuestionsDetailView, ShortQuestionsDetailView
 
 urlpatterns = [
     # path('admin/', admin.site.urls),

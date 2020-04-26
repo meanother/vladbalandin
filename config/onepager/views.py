@@ -1,13 +1,9 @@
-from django.shortcuts import render
 from rest_framework.response import Response
-from django.contrib.auth import get_user_model
+from rest_framework import generics, status
+from rest_framework.response import Response
 from rest_framework.settings import api_settings
 
-from .models import ShortQuestions, PollQuestions
 from .serializers import ShortQuestionsSerializer, PollQuestionsSerializer
-from rest_framework import generics, views, status
-from rest_framework import permissions
-from django.core.mail import send_mail
 
 
 # from rest_framework import pagination
@@ -20,6 +16,7 @@ from django.core.mail import send_mail
 class ShortQuestionsDetailView(generics.CreateAPIView):
     # permission_classes = [permissions.IsAuthenticated]
     serializer_class = ShortQuestionsSerializer
+
     # queryset = MailSend.objects.all()
 
     def create(self, request, *args, **kwargs):
@@ -62,11 +59,10 @@ class ShortQuestionsDetailView(generics.CreateAPIView):
             return {}
 
 
-
-
 class PollQuestionsDetailView(generics.CreateAPIView):
     # permission_classes = [permissions.IsAuthenticated]
     serializer_class = PollQuestionsSerializer
+
     # queryset = MailSend.objects.all()
 
     def create(self, request, *args, **kwargs):
