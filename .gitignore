@@ -6,11 +6,12 @@
 __pycache__
 db.sqlite3
 media
-static/
+#static/
 # Backup files #
 *.bak
 
 settings_dev.py
+settings_prod.py
 secret_properties.py
 
 # If you are using PyCharm #
