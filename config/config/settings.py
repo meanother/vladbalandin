@@ -15,19 +15,14 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+try:
+    from .settings_dev import *
+except:
+    from .settings_prod import *
 
-
-REST_URL = 'http://77.244.65.15:9000'
 
 # DEBUG = True
 # ALLOWED_HOSTS = []
-
-DEBUG = False
-ALLOWED_HOSTS = ['77.244.65.15', '0.0.0.0', '127.0.0.1']
-
-
-
-
 
 
 # Quick-start development settings - unsuitable for production
@@ -39,13 +34,13 @@ SECRET_KEY = '+m9y9xsilziy=%d22p15^ld+pswxet!l3sx0+!=(oj36ay^4nr'
 # SECURITY WARNING: don't run with debug turned on in production!
 
 
-
 # Application definition
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 100
-}
+    'PAGE_SIZE': 100,
+    'DATETIME_FORMAT': '%d.%m.%Y %H:%M:%S',
 
+}
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -75,6 +70,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        # 'DIRS': ['/home/arty/PycharmProjects/vladBalandin/config', ],
         'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -90,7 +86,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 #
@@ -100,22 +95,6 @@ WSGI_APPLICATION = 'config.wsgi.application'
 #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
-
-
-#
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'OPTIONS': {
-            'options': '-c search_path=promise_rest'
-        },
-        'NAME': 'parsing_db',
-        'USER': 'semenov',
-        'PASSWORD': '12345',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
 
 
 # Password validation
@@ -136,10 +115,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
-
 
 
 LANGUAGE_CODE = 'en-us'
@@ -154,13 +131,13 @@ USE_TZ = True
 
 CORS_ORIGIN_ALLOW_ALL = True
 
-
 APPEND_SLASH = True
-
-
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+# STATIC_URL = os.path.join(BASE_DIR, 'static/')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
+

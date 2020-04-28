@@ -1,7 +1,9 @@
 from django.db import models
+from datetime import datetime
 
 
 # Create your models here.
+# message_dt = datetime.now().strftime('%d.%m.%Y %H:%M:%S')
 
 
 class ShortQuestions(models.Model):
