@@ -11,15 +11,14 @@ from datetime import datetime
 # print(response.status_code)
 # print(response.headers)
 # print(response.text)
-
-message_dt = datetime.now().strftime('%d.%m.%Y %H:%M:%S')
-print(message_dt)
-print((datetime.now().strftime('%d.%m.%Y %H:%M:%S')))
-
+#
+# message_dt = datetime.now().strftime('%d.%m.%Y %H:%M:%S')
+# print(message_dt)
+# print((datetime.now().strftime('%d.%m.%Y %H:%M:%S')))
+#
 
 
 # TODO Создать в systemd/gunicorn.service
-
 '''
 sudo ln -s $project_path/systemd/gunicorn.service /etc/systemd/system/
 
