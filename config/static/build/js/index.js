@@ -46,14 +46,12 @@ $(document).ready(function () {
 
   $(".short-name").keyup(function () {
     shortName = $(".short-name").val();
-    console.log(shortName);
     isValid = true;
     $(".short-name").removeClass("error");
   });
 
   $(".name").keyup(function () {
     name = $(".name").val();
-    console.log(name);
     isValid = true;
     $(".name").removeClass("error");
   });
@@ -76,7 +74,6 @@ $(document).ready(function () {
 
   $(".message").keyup(function () {
     message = $(".message").val();
-    console.log(message);
     isValid = true;
     $(".message").removeClass("error");
   });
@@ -97,7 +94,6 @@ $(document).ready(function () {
     if (shortName === "") {
       isValid = false;
       $(".short-name").addClass("error");
-      console.log(shortName);
     }
 
     if (shortPhone === "") {
@@ -108,7 +104,6 @@ $(document).ready(function () {
       isValid = false;
       $(".message").addClass("error");
     }
-    console.log(isValid);
     if (isValid) {
       let formData = new FormData();
       formData.append("name", shortName);
@@ -121,10 +116,9 @@ $(document).ready(function () {
         body: formData,
       };
       let response = await fetch(
-        `http://77.244.65.15:9000/onepage/short/`,
+        `https://fl-bankrotstvo.ru/onepage/short/`,
         requestOptions
       );
-      console.log(response);
       if (response.ok) {
         $(".form").fadeOut(300);
         $(".good__resp").fadeIn(300).css("display", "flex");
@@ -170,7 +164,6 @@ $(document).ready(function () {
     if (name === "") {
       isValid = false;
       $(".name").addClass("error");
-      console.log(name);
     }
     if (phone === "") {
       isValid = false;
@@ -204,7 +197,7 @@ $(document).ready(function () {
         body: formData,
       };
       let response = await fetch(
-        `http://77.244.65.15:9000/onepage/full/`,
+        `https://fl-bankrotstvo.ru/onepage/full/`,
         requestOptions
       );
 
@@ -233,17 +226,52 @@ $(document).ready(function () {
     );
   });
 
-  let notKwiz = true;
-  $(window).scroll(function () {
-    if (notKwiz) {
-      if ($(window).scrollTop() > 700) {
-        $(".kwiz").fadeIn(300).css("display", "flex");
-      }
-    }
+  // advantages
+
+  $(".advantages__item-1").click(function () {
+    $(".advantages-3, .advantages-2").fadeOut(0);
+    $(".advantages-1").fadeIn(500).css("display", "flex");
+    $(this).addClass("focus");
+    $(".advantages__item-3 , .advantages__item-2").removeClass("focus");
   });
-  $(".kwiz_exit").click(function () {
-    $(".kwiz").fadeOut(300);
-    notKwiz = false;
+
+  $(".advantages__item-2").click(function () {
+    $(".advantages-1, .advantages-3").fadeOut(0);
+    $(".advantages-2").fadeIn(500).css("display", "flex");
+    $(this).addClass("focus");
+    $(".advantages__item-1 , .advantages__item-3").removeClass("focus");
+  });
+
+  $(".advantages__item-3").click(function () {
+    $(".advantages-1, .advantages-2").fadeOut(0);
+    $(".advantages-3").fadeIn(500).css("display", "flex");
+    $(this).addClass("focus");
+    $(".advantages__item-1 , .advantages__item-2").removeClass("focus");
+  });
+
+  // slider
+  let slide = 1;
+
+  $(".right_review").click(function () {
+    $(`.slide-${slide}`).fadeOut(0);
+    slide === 4 ? (slide = 1) : slide++;
+    $(`.slide-${slide}`).fadeIn(300);
+  });
+  $(".left_review").click(function () {
+    $(`.slide-${slide}`).fadeOut(0);
+    slide === 1 ? (slide = 4) : slide--;
+    $(`.slide-${slide}`).fadeIn(300);
+  });
+
+  // scroll
+
+  $(window).scroll(function () {
+    if ($(window).scrollTop() > 300) {
+      $(".up").fadeIn(300);
+    }
+    if ($(window).scrollTop() < 300) {
+      $(".up").fadeOut(300);
+    }
   });
 
   // ---

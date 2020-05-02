@@ -1,12 +1,12 @@
 {% load static %}
 
-
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="yandex-verification" content="bd3c6c5be1d554d9" />
     <link rel="stylesheet" href="{% static "build/css/style.css" %}">
     <title>Главная</title>
 </head>
@@ -14,38 +14,61 @@
 <body>
     <div class="wrap">
 
-        <header class="header">
-            <div class="header__block">
-                <span class="header__logo ">
-                    <a href="#"> LOGO</a>
-                </span>
-                <button class="header_button open_call">
-                    Связаться
-                </button>
-            </div>
-            <div class="header__block header__border">
-                <nav class="header__menu menu">
-                    <a class="menu__item-href" href="#">Компания </a>
-                    <a class="menu__item-href" href="#">Вопросы</a>
-                    <a class="menu__item-href" href="#">Результаты</a>
+        <header class="header" id="up">
+            <span class="logo ">
+                <a href="#">
+                    <img src="{% static "build/img/logo.png" %}" alt="LF">
+                </a>
+            </span>
+
+            <div class="header__block  ">
+                <div class="header__social social">
+                    <a class="social__link" href="#">
+                        <img src="{% static "build/img/instagram.png" %}">
+                    </a>
+                    <a class="social__link" href="#">
+                        <img src="{% static "build/img/вконтакте.png" %}">
+                    </a>
+                    <a class="social__link" href="#">
+                        <img src="{% static "build/img/телеграмма.png" %}">
+                    </a>
+                </div>
+                <nav class="header__menu menu header__border">
+                    <a class="menu__item-href" href="#">О компания </a>
+                    <a class="menu__item-href" href="#">Преимущества</a>
+                    <a class="menu__item-href" href="#">Схема работы</a>
                     <a class="menu__item-href" href="#">Отзывы</a>
-                    <a class="menu__item-href" href="#">Советы</a>
-                    <a class="menu__item-href" href="#">Услуги</a>
                     <a class="menu__item-href" href="#">Контакты</a>
                 </nav>
 
-                <span class="header__contact contact">
-                    <a class="contact__item" href="#">+7-000-000-00-00</a>
-                    <a class="contact__item" href="#">info@yandec.ru</a>
-                </span>
+
+            </div>
+
+            <div class="header__contact">
+                <div>
+                    <span>Тел</span>
+                    <span>
+                        <a class="contact__item" href="#">8 (484) 391-23-45</a>
+                        <a class="contact__item" href="#">8 (484) 391-23-45</a>
+                    </span>
+                </div>
+                <div>
+                    <span>Email</span>
+                    <span>
+                        <a class="contact__item" href="#">info@fl-bankrotstvo.ru</a>
+                    </span>
+                </div>
+                <button class="call_button open_call">
+                    Вам перезвонить ?
+                </button>
             </div>
         </header>
 
-        <section class="title container">
+        <section class="title container top">
             <div class="title__block">
                 <div class="title__big-text-blog">
                     <p class="title__big-text">
-                        Банкротсво физических лиц и индивидуальных предпринимателей с гарантией
+                        Банкротство физических лиц и индивидуальных предпринимателей с гарантией
                         <p>
                 </div>
 
@@ -70,7 +93,7 @@
             </div>
         </section>
 
-        <section id="ques" class="questions">
+        <section class="questions">
 
             <div class="qustion__item item-0 head">
 
@@ -78,7 +101,7 @@
 
                     <div class="head__subblock">
                         <h3 class="head__text">
-                            Заполните анкету и наш специалист свяжется с вами
+                            Заполните анкету и узнайти можно ли списать ваш долг
                         </h3>
                         <button class="head__btn">
                             Заполнить анкету
@@ -97,242 +120,211 @@
                         </div>
                     </div>
 
-                    <div class="head__block-img">
-                        <img class="head__img" src="{% static 'build/img/Mail-sent.jpg' %}" alt="">
-                    </div>
 
                 </article>
             </div>
+
             <!-- 1 -->
+
             <div class="qustion__item item-1">
-                <h3 class="questions__text">Какова общая сумма задолжности перед кредитными или иными организациями?
-                </h3>
-                <article class="questions__block">
-                    <form>
-                        <div class="questions__answer">
-                            <input class="questions__input" name="question-1" id="radio-2" type="radio"
-                                value="От 300 000 до 700 000 рублей">
-                            <label class="questions__label" for="radio-2">От 300 000 до 700 000 рублей</label>
-                        </div>
-                        <div class="questions__answer">
-                            <input class="questions__input" name="question-1" id="radio-3" type="radio"
-                                value="От 700 000 до 1 500 000 рублей">
-                            <label class="questions__label" for="radio-3">От 700 000 до 1 500 000 рублей</label>
-                        </div>
-                        <div class="questions__answer">
-                            <input class="questions__input" name="question-1" id="radio-4" type="radio"
-                                value="От 1 500 000 до 3 000 000 рублей">
-                            <label class="questions__label" for="radio-4">От 1 500 000 до 3 000 000 рублей</label>
-                        </div>
-                        <div class="questions__answer">
-                            <input class="questions__input" name="question-1" id="radio-5" type="radio"
-                                vlaue="От 3 000 000 рублей">
-                            <label class="questions__label" for="radio-5">От 3 000 000 рублей</label>
-                        </div>
-                    </form>
-                    <span class="questions__number">1/6</span>
-                </article>
-                <article class="questions__btn-block">
-                    <button class="questions__btn-back">Назад</button>
+                <p class="questions__text">Какова общая сумма задолжности перед кредитными или иными организациями?
+                </p>
+                <article class="head__block">
+                    <div class="questions__block">
 
-                    <button class="questions__btn-next">Дальше</button>
+                        <input class="questions__input" name="question-1" id="radio-2" type="radio"
+                            value="От 300 000 до 700 000 рублей">
+                        <label class="questions__label" for="radio-2">От 300 000 до 700 000 рублей</label>
+
+                        <input class="questions__input" name="question-1" id="radio-3" type="radio"
+                            value="От 700 000 до 1 500 000 рублей">
+                        <label class="questions__label" for="radio-3">От 700 000 до 1 500 000 рублей</label>
+                        <input class="questions__input" name="question-1" id="radio-4" type="radio"
+                            value="От 1 500 000 до 3 000 000 рублей">
+                        <label class="questions__label" for="radio-4">От 1 500 000 до 3 000 000 рублей</label>
+                        <input class="questions__input" name="question-1" id="radio-5" type="radio"
+                            vlaue="От 3 000 000 рублей">
+                        <label class="questions__label" for="radio-5">От 3 000 000 рублей</label>
+
+                        <div class="questions__btn-block">
+                            <button class="questions__btn-back">Назад</button>
+
+                            <button class="questions__btn-next">Дальше</button>
+                        </div>
+                    </div>
+                    <div class="head__block-img">
+                        <span class="questions__number">1/6</span>
+                    </div>
                 </article>
             </div>
+
             <!-- 2 -->
+
             <div class="qustion__item item-2">
-                <h3 class="questions__text">
+                <p class="questions__text">
                     Перед сколькими кредиторами вы имеете задолжность?
-                </h3>
-                <article class="questions__block">
+                </p>
+                <article class="head__block">
+                    <div class="questions__block">
 
-                    <form>
-                        <div class="questions__answer">
-                            <input class="questions__input" name="question-2" id="radio-21" type="radio" value="1">
-                            <label class="questions__label" for="radio-21">1</label>
+                        <input class="questions__input" name="question-2" id="radio-21" type="radio" value="1">
+                        <label class="questions__label" for="radio-21">1</label>
+                        <input class="questions__input" name="question-2" id="radio-22" type="radio" value="2">
+                        <label class="questions__label" for="radio-22">2</label>
+                        <input class="questions__input" name="question-2" id="radio-23" type="radio" value="3">
+                        <label class="questions__label" for="radio-23">3</label>
+                        <input class="questions__input" name="question-2" id="radio-24" type="radio" value="4">
+                        <label class="questions__label" for="radio-24">4</label>
+                        <input class="questions__input" name="question-2" id="radio-25" type="radio" value="5 и более">
+                        <label class="questions__label" for="radio-25">5 и более</label>
+
+                        <div class="questions__btn-block">
+                            <button class="questions__btn-back">Назад</button>
+                            <button class="questions__btn-next">Дальше</button>
                         </div>
-                        <div class="questions__answer">
-                            <input class="questions__input" name="question-2" id="radio-22" type="radio" value="2">
-                            <label class="questions__label" for="radio-22">2</label>
-                        </div>
-                        <div class="questions__answer">
-                            <input class="questions__input" name="question-2" id="radio-23" type="radio" value="3">
-                            <label class="questions__label" for="radio-23">3</label>
-                        </div>
-                        <div class="questions__answer">
-                            <input class="questions__input" name="question-2" id="radio-24" type="radio" value="4">
-                            <label class="questions__label" for="radio-24">4</label>
-                        </div>
-                        <div class="questions__answer">
-                            <input class="questions__input" name="question-2" id="radio-25" type="radio"
-                                value="5 и более">
-                            <label class="questions__label" for="radio-25">5 и более</label>
-                        </div>
-                    </form>
-                    <span class="questions__number">2/6</span>
+
+                    </div>
+                    <div class="head__block-img">
+                        <span class="questions__number">2/6</span>
+                    </div>
                 </article>
-                <article class="questions__btn-block">
-                    <button class="questions__btn-back">Назад</button>
-                    <button class="questions__btn-next">Дальше</button>
-                </article>
+
             </div>
+
             <!-- 3 -->
+
             <div class="qustion__item item-3">
-                <h3 class="questions__text">
+                <p class="questions__text">
                     Сколько состовляет ваш общий ежемесячный доход?
-                </h3>
-                <article class="questions__block">
-
-                    <form>
-                        <div class="questions__answer">
-                            <input class="questions__input" name="question-3" id="radio-31" type="radio"
-                                value="Менее 10 тысяч">
-                            <label class="questions__label" for="radio-31">Менее 10 000</label>
+                </p>
+                <article class="head__block">
+                    <div class="questions__block">
+                        <input class="questions__input" name="question-3" id="radio-31" type="radio"
+                            value="Менее 10 тысяч">
+                        <label class="questions__label" for="radio-31">Менее 10 000</label>
+                        <input class="questions__input" name="question-3" id="radio-32" type="radio"
+                            value="От 10 до 30 тысяч">
+                        <label class="questions__label" for="radio-32">От 10 000 до 30 000 </label>
+                        <input class="questions__input" name="question-3" id="radio-33" type="radio"
+                            value="Более 30 тысяч">
+                        <label class="questions__label" for="radio-33">Более 30 000</label>
+                        <div class="questions__btn-block">
+                            <button class="questions__btn-back">Назад</button>
+                            <button class="questions__btn-next">Дальше</button>
                         </div>
-                        <div class="questions__answer">
-                            <input class="questions__input" name="question-3" id="radio-32" type="radio"
-                                value="От 10 до 30 тысяч">
-                            <label class="questions__label" for="radio-32">От 10 000 до 30 000 </label>
-                        </div>
-                        <div class="questions__answer">
-                            <input class="questions__input" name="question-3" id="radio-33" type="radio"
-                                value="Более 30 тысяч">
-                            <label class="questions__label" for="radio-33">Более 30 000</label>
-                        </div>
-                    </form>
-                    <span class="questions__number">3/6</span>
-                </article>
-                <article class="questions__btn-block">
-                    <button class="questions__btn-back">Назад</button>
-                    <button class="questions__btn-next">Дальше</button>
+                    </div>
+                    <div class="head__block-img">
+                        <span class="questions__number">3/6</span>
+                    </div>
                 </article>
             </div>
+
             <!-- 4 -->
+
             <div class="qustion__item item-4">
-                <h3 class="questions__text">
+                <p class="questions__text">
                     У вас есть ипотека или иное имущество в залоге?
-                </h3>
-                <article class="questions__block">
+                </p>
+                <article class="head__block">
+                    <div class="questions__block">
 
-                    <form>
-                        <div class="questions__answer">
-                            <input class="questions__input" name="question-4" id="radio-41" type="radio" value="Да">
-                            <label class="questions__label" for="radio-41">Да</label>
+                        <input class="questions__input" name="question-4" id="radio-41" type="radio" value="Да">
+                        <label class="questions__label" for="radio-41">Да</label>
+                        <input class="questions__input" name="question-4" id="radio-42" type="radio" value="нет">
+                        <label class="questions__label" for="radio-42">Нет</label>
+                        <div class="questions__btn-block">
+                            <button class="questions__btn-back">Назад</button>
+                            <button class="questions__btn-next">Дальше</button>
                         </div>
-                        <div class="questions__answer">
-                            <input class="questions__input" name="question-4" id="radio-42" type="radio" value="нет">
-                            <label class="questions__label" for="radio-42">Нет</label>
-                        </div>
-                    </form>
-                    <span class="questions__number">4/6</span>
-                </article>
-                <article class="questions__btn-block">
-                    <button class="questions__btn-back">Назад</button>
-                    <button class="questions__btn-next">Дальше</button>
+                    </div>
+                    <div class="head__block-img">
+                        <span class="questions__number">4/6</span>
+                    </div>
                 </article>
             </div>
+
             <!-- 5 -->
+
             <div class="qustion__item item-5">
-                <h3 class="questions__text">
+                <p class="questions__text">
                     Каким имуществом вы владеете или владели в течение последних трех лет
-                </h3>
-                <article class="questions__block">
+                </p>
+                <article class="head__block">
+                    <div class="questions__block">
 
-                    <form>
-                        <div class="questions__answer">
-                            <input class="questions__input" name="question-5" id="radio-51" type="checkbox"
-                                value="Единственное жилье">
-                            <label class="questions__label" for="radio-51">Единственное жилье</label>
-                        </div>
-                        <div class="questions__answer">
-                            <input class="questions__input" name="question-5" id="radio-52" type="checkbox" value="Дополнительная недвижимоть (дача,
+                        <input class="questions__input" name="question-5" id="radio-51" type="checkbox"
+                            value="Единственное жилье">
+                        <label class="questions__label" for="radio-51">Единственное жилье</label>
+                        <input class="questions__input" name="question-5" id="radio-52" type="checkbox" value="Дополнительная недвижимоть (дача,
                             квартира)">
-                            <label class="questions__label" for="radio-52">Дополнительная недвижимоть
-                                (дача,квартира)</label>
+                        <label class="questions__label" for="radio-52">Дополнительная недвижимоть
+                            (дача,квартира)</label>
+                        <input class="questions__input" name="question-5" id="radio-53" type="checkbox"
+                            value="Автомобиль">
+                        <label class="questions__label" for="radio-53">Автомобиль</label>
+                        <input class="questions__input" name="question-5" id="radio-54" type="checkbox" value="Гараж">
+                        <label class="questions__label" for="radio-54">Гараж</label>
+                        <input class="questions__input" name="question-5" id="radio-55" type="checkbox"
+                            value="Земельный участок">
+                        <label class="questions__label" for="radio-55">Земельный участок</label>
+                        <input class="questions__input" name="question-5" id="radio-56" type="checkbox"
+                            value="Комерческое помещение">
+                        <label class="questions__label" for="radio-56">Комерческое помещение</label>
+                        <input class="questions__input" name="question-5" id="radio-57" type="checkbox"
+                            value="Доли в предприятиях, акционерных обществах">
+                        <label class="questions__label" for="radio-57">Доли в предприятиях, акционерных
+                            обществах</label>
+                        <input class="questions__input" name="question-5" id="radio-58" type="checkbox" value="другое">
+                        <label class="questions__label" for="radio-58">другое</label>
+                        <div class="questions__btn-block">
+                            <button class="questions__btn-back">Назад</button>
+                            <button class="questions__btn-next">Дальше</button>
                         </div>
-                        <div class="questions__answer">
-                            <input class="questions__input" name="question-5" id="radio-53" type="checkbox"
-                                value="Автомобиль">
-                            <label class="questions__label" for="radio-53">Автомобиль</label>
-                        </div>
-                        <div class="questions__answer">
-                            <input class="questions__input" name="question-5" id="radio-54" type="checkbox"
-                                value="Гараж">
-                            <label class="questions__label" for="radio-54">Гараж</label>
-                        </div>
-                        <div class="questions__answer">
-                            <input class="questions__input" name="question-5" id="radio-55" type="checkbox"
-                                value="Земельный участок">
-                            <label class="questions__label" for="radio-55">Земельный участок</label>
-                        </div>
-                        <div class="questions__answer">
-                            <input class="questions__input" name="question-5" id="radio-56" type="checkbox"
-                                value="Комерческое помещение">
-                            <label class="questions__label" for="radio-56">Комерческое помещение</label>
-                        </div>
-                        <div class="questions__answer">
-                            <input class="questions__input" name="question-5" id="radio-57" type="checkbox"
-                                value="Доли в предприятиях, акционерных обществах">
-                            <label class="questions__label" for="radio-57">Доли в предприятиях, акционерных
-                                обществах</label>
-                        </div>
-                        <div class="questions__answer">
-                            <input class="questions__input" name="question-5" id="radio-58" type="checkbox"
-                                value="другое">
-                            <label class="questions__label" for="radio-58">другое</label>
-                        </div>
-
-                    </form>
-                    <span class="questions__number">5/6</span>
-                </article>
-                <article class="questions__btn-block">
-                    <button class="questions__btn-back">Назад</button>
-                    <button class="questions__btn-next">Дальше</button>
+                    </div>
+                    <div class="head__block-img">
+                        <span class="questions__number">5/6</span>
+                    </div>
                 </article>
             </div>
+
             <!-- 6 -->
+
             <div class="qustion__item item-6">
-                <h3 class="questions__text">
+                <p class="questions__text">
                     Оставьте контактные данные, по которым можно связаться и сообщить
                     результат аудита вашей ситуации
-                </h3>
-                <article class="questions__block">
+                </p>
+                <article class="head__block">
 
-                    <form>
-                        <div class="questions__answer">
-                            <input class="input name" type="text" placeholder="Ваше имя *" required>
-
-                        </div>
-                        <div class="questions__answer">
-                            <input class="input phone" type="tel" placeholder="Номер телефона *">
-                        </div>
-                        <div class="questions__answer">
-                            <input class=" input email" type="email" placeholder="E-mail ">
-                        </div>
-                        <div class="questions__answer">
-                            <input class=" input city" type="text"
-                                placeholder="Из какого города вы к нам обращаетесь? *">
-                        </div>
-                        <div class="questions__answer">
-                            <input class="input regist" type="text" placeholder="В каком городе вы прописанны? *">
-                        </div>
+                    <div class="questions__block submit__block">
+                        <input class="input name" type="text" placeholder="Ваше имя *" required>
+                        <input class="input phone" type="tel" placeholder="Номер телефона *">
+                        <input class=" input email" type="email" placeholder="E-mail ">
+                        <input class=" input city" type="text" placeholder="Из какого города вы к нам обращаетесь? *">
+                        <input class="input regist" type="text" placeholder="В каком городе вы прописанны? *">
                         <span class="note">* - обязательно для заполнения</span>
-                    </form>
-                    <span class="questions__number">6/6</span>
-                </article>
-                <article class="questions__btn-block">
-                    <button class="questions__btn-back">Назад</button>
-                    <button class="questions__btn-submit">Отправить</button>
+                        <div class="questions__btn-submit-block">
+                            <button class="questions__btn-back">Назад</button>
+                            <button class="questions__btn-submit">Отправить</button>
+                        </div>
+                    </div>
+                    <div class="head__block-img">
+                        <span class="questions__number">6/6</span>
+                    </div>
                 </article>
             </div>
-            <div class="item-7 good__resp">
-                <h2>Сообщение успешно отправленно </h2>
-                <button class="call__back__qustion">
-                    Вернуться
-                </button>
-            </div>
-        </section>
 
-        <section class="result container">
+    </div>
+    <div class="item-7 good__resp">
+        <h2>Сообщение успешно отправленно </h2>
+        <button class="call__back__qustion">
+            Вернуться
+        </button>
+    </div>
+    </section>
+
+    <section class="result">
+        <div class="container">
             <h1 class="subtitle"> ПОЧЕМУ ДЛЯ СПИСАНИЯ ДОЛГОВ ОБРАЩАЮТСЯ К НАМ </h1>
 
             <article class="result__blocks ">
@@ -366,220 +358,365 @@
                     </p>
                 </div>
             </article>
-        </section>
+        </div>
+    </section>
 
-        <section class="advantages container">
-            <h1 class="subtitle"> СПИСЫВАЕМ ДОЛГИ ИЛИ ВОЗВРАЩАЕМ ДЕНЬГИ
-            </h1>
+    <section class="advantages container top">
+        <h1 class="subtitle"> СПИСЫВАЕМ ДОЛГИ ИЛИ ВОЗВРАЩАЕМ ДЕНЬГИ</h1>
 
-            <article class="advantages__blocks ">
-                <span class="advantages__title title-1">
-                    Финансовые выгоды
-                    <img class="advantages__icon icon-1" src="{% static "build/img/icon22.png" %}">
+        <article class="advantages__items">
+            <span class="advantages__item advantages__item-1 focus">
+                Финансовые выгоды
+            </span>
+            <span class="advantages__item advantages__item-2">
+                Ваши преимущества
+            </span>
+            <span class="advantages__item advantages__item-3">
+                А если не списать долг?
+            </span>
+        </article>
+
+        <article class="advantages__content advantages-1">
+
+            <div class="advantages__content-item">
+                <span>
+                    <h4> Быстрый старт: </h4>
+                    <p> Начинаем работать по вашей процедуре в день заключения договора с минимальным платежом __ тысяч
+                        рублей.</p>
                 </span>
-                <div class="advantages__info-blocks block-1">
-                    <h3>
-                        Быстрый старт:
-                    </h3>
-                    <p>
-                        Начинаем работать по вашей процедуре в день заключения договора с минимальным платежом __ тысяч
-                        рублей.
-                    </p>
+            </div>
+            <div class="advantages__content-item">
+                <span>
+                    <h4> Беспроцентная рассрочка: </h4>
+                    <p> Комфортная рассрочка на срок от до месяцев.</p>
+                </span>
 
-                    <h3>
-                        Беспроцентная рассрочка:
-                    </h3>
-                    <p>
-                        Комфортная рассрочка на срок от до месяцев.
-                    </p>
-
-                    <h3>
-                        Фиксация цены:
-                    </h3>
-                    <p>
-                        Фиксируем стоимость услуг и ежемесячный платеж в договоре. Никаких навязанных услуг и
-                        дополнительных платежей.
-                    </p>
-                    <h3>
-                        Экономия:
-                    </h3>
-                    <p>
-                        Вы потратите минимум в 3 раза меньше денег и полностью освободитесь от долгов. Рассрочку вы
+            </div>
+            <div class="advantages__content-item">
+                <span>
+                    <h4> Фиксация цены: </h4>
+                    <p> Фиксируем стоимость услуг и ежемесячный платеж в договоре. Никаких навязанных услуг и
+                        дополнительных
+                        платежей.</p>
+                </span>
+            </div>
+            <div class="advantages__content-item">
+                <span>
+                    <h4> Экономия: </h4>
+                    <p> Вы потратите минимум в 3 раза меньше денег и полностью освободитесь от долгов. Рассрочку вы
                         сможете оплачивать из освободившихся средств, которые теперь не надо каждый месяц платить в
-                        банки и МФО или которые удерживались из вашего дохода.
-                    </p>
-                </div>
-                <span class="advantages__title title-2">
-                    Ваши преимущества:
-                    <img class="advantages__icon icon-2" src="{% static "build/img/icon22.png" %}">
+                        банки и МФО или
+                        которые удерживались из вашего дохода. </p>
                 </span>
-                <div class="advantages__info-blocks block-2">
-                    <h3>
-                        Дистанционная работа:
-                    </h3>
+            </div>
+
+        </article>
+
+        <article class="advantages__content advantages-2">
+
+            <div class="advantages__content-item">
+                <span>
+                    <h4>Дистанционная работа:</h4>
                     <p>
                         После подписания договора и оформления доверенности, вы просто ожидаете положительного
                         результата. Вся процедура проводится нашими специалистами без вашего участия.
                     </p>
-
-                    <h3>
-                        Отчетность по этапам вашей процедуры:
-                    </h3>
-                    <p>
-                        В любой момент сообщим на какой стадии находится ваша
-                        процедура. По вашему запросу, подготовим письменный отчет.
-                    </p>
-
-                    <h3>
-                        Узкая специализация:
-                    </h3>
-                    <p>
-                        Мы не специализируемся только на банкротстве физических лиц, но и не занимаемся всем подряд.
-                        Круг наших профессиональных интересов: взыскание задолженности, банкротство физических лиц и
-                        индивидуальных предпринимателей, оспаривание сделок и субсидиарная ответственность при
-                        банкротстве.
-                    </p>
-                    <h3>
-                        Бесплатный анализ:
-                    </h3>
-                    <p>
-                        Проведем бесплатную консультацию, проанализируем вашу ситуацию и сообщим возможно ли списать ваш
-                        долг полностью или частично.
-                    </p>
-                </div>
-                <span class="advantages__title title-3">
-                    Что будет, если не списать долги?
-                    <img class="advantages__icon icon-3" src="{% static "build/img/icon22.png" %}">
                 </span>
-                <div class="advantages__info-blocks block-3">
-                    <h3>
-                        Ваши кредиторы потребуют взыскание:
-                    </h3>
-                    <p>
-                        Через 2-3 месяца кредиторы обратятся в суд за принудительным взысканием.
+            </div>
+            <div class="advantages__content-item">
+                <span>
+                    <h4>Отчетность по этапам вашей процедуры: </h4>
+                    <p> В любой момент сообщим на какой стадии находится ваша процедура. По вашему запросу, подготовим
+                        письменный отчет.</p>
+                </span>
+
+            </div>
+            <div class="advantages__content-item">
+                <span>
+                    <h4> Узкая специализация: </h4>
+                    <p>Мы не специализируемся только на банкротстве физических лиц, но и не занимаемся всем подряд. Круг
+                        наших профессиональных интересов: взыскание задолженности, банкротство физических лиц и
+                        индивидуальных предпринимателей, оспаривание сделок и субсидиарная ответственность при
+                        банкротстве.</p>
+                </span>
+            </div>
+            <div class="advantages__content-item">
+                <span>
+                    <h4> Бесплатный анализ: </h4>
+                    <p> Проведем бесплатную консультацию, проанализируем вашу ситуацию и сообщим возможно ли списать ваш
+                        долг полностью или частично. </p>
+                </span>
+            </div>
+
+        </article>
+
+        <article class="advantages__content advantages-3">
+
+            <div class="advantages__content-item">
+                <span>
+                    <h4>Ваши кредиторы потребуют взыскание: </h4>
+                    <p> Через 2-3 месяца кредиторы обратятся в суд за принудительным взысканием.</p>
+                </span>
+            </div>
+            <div class="advantages__content-item">
+                <span>
+                    <h4>Приставы начнут принудительное взыскание: </h4>
+                    <p>Через 3-4 месяца ваши долги поступят на исполнение в Федеральную службу судебных приставов РФ.
                     </p>
+                </span>
 
-                    <h3>
-                        Приставы начнут принудительное взыскание:
-                    </h3>
+            </div>
+            <div class="advantages__content-item">
+                <span>
+                    <h4> Аресты и штрафы:</h4>
+                    <p> На ваши счета наложат арест, запретят выезд за границу, а со всех доходов станут удерживать
+                        средства для погашения долгов</p>
+                </span>
+            </div>
+            <div class="advantages__content-item">
+                <span>
+                    <h4> Долг продолжит свой рост: </h4>
+                    <p>По вашим обязательствам будут расти проценты, пени, и начисляться штрафы и неустойки. </p>
+                </span>
+            </div>
+
+        </article>
+    </section>
+
+    <section class="stage container top">
+        <h1 class="subtitle">
+            ПОЧЕМУ ДЛЯ СПИСАНИЯ ДОЛГОВ ОБРАЩАЮТСЯ К НАМ
+        </h1>
+
+        <article class="stage__blocks">
+            <div class="stage__info-block">
+                <span class="stage__point">
+                    1
+                </span>
+                <span class="stage__text">
                     <p>
-                        Через 3-4 месяца ваши долги поступят на исполнение в Федеральную службу судебных приставов РФ.
-                    </p>
+                        Бесплатно проводим юридический анализ вашей ситуации и оцениваем ваши шансы на положительное
+                        решение. Заключаем договор. Вы вносите аванс, мы приступаем ко второму этапу.
 
-                    <h3>
-                        Аресты и штрафы:
-                    </h3>
+                    </p>
+                    <span>Длительность: 1 день. </span>
+                </span>
+
+            </div>
+
+            <div class="stage__info-block">
+                <span class="stage__point">
+                    2
+                </span>
+                <span class="stage__text">
+
                     <p>
-                        На ваши счета наложат арест, запретят выезд за границу, а со всех доходов станут удерживать
-                        средства для погашения долгов.
+                        Организовываем прием у нотариуса, оформляем нотариальную доверенность на защиту и
+                        представление ваших интересов в суде, других органах и организациях. Вы начинаете жить
+                        спокойно, а мы собирать пакет документов для признания вас банкротом.
                     </p>
-                    <h3>
-                        Долг продолжит свой рост:
-                    </h3>
+                    <span>Длительность: 0,5—1 календарных месяца.</span>
+                </span>
+
+            </div>
+
+            <div class="stage__info-block">
+                <span class="stage__point">
+                    3
+                </span>
+                <span class="stage__text">
+
                     <p>
-                        По вашим обязательствам будут расти проценты, пени, и начисляться штрафы и неустойки.
+                        Составляем и подаем в арбитражный суд, предусмотренные законом заявление о признании вас
+                        несостоятельным (банкротом) и приложения к нему.
                     </p>
-                </div>
-            </article>
-        </section>
-        <section class="stage container">
-            <h1 class="subtitle">
-                ПОЧЕМУ ДЛЯ СПИСАНИЯ ДОЛГОВ ОБРАЩАЮТСЯ К НАМ
-            </h1>
+                    <span>Длительность: 5 рабочих дней.</span>
+                </span>
+            </div>
 
-            <article class="stage__blocks">
-                <div class="stage__info-block">
-                    <span class="stage__text">
-                        <h3>
-                            «1й этап»
-                        </h3>
-                        <p>
-                            Бесплатно проводим юридический анализ вашей ситуации и оцениваем ваши шансы на положительное
-                            решение. Заключаем договор. Вы вносите аванс, мы приступаем ко второму этапу.
+            <div class="stage__info-block">
+                <span class="stage__point">
+                    <span>4</span>
+                </span>
+                <span class="stage__text">
 
-                        </p>
-                        <span>Длительность: 1 день. </span>
-                    </span>
+                    <p>
+                        Контролируем процесс принятия заявления к производству и назначение финансового
+                        управляющего. Защищаем ваши интересы в судебном процессе, участвуем в собраниях кредиторов и
+                        анализируем отчеты финансового управляющего. При необходимости, осуществляем иные действия,
+                        направленные на вашу защиту. </p>
 
-                </div>
+                    <span>Длительность: 4—8 календарных месяцев.</span>
+                </span>
+            </div>
 
-                <div class="stage__info-block">
-                    <span class="stage__text">
-                        <h3>
-                            «2й этап»
-                        </h3>
-                        <p>
-                            Организовываем прием у нотариуса, оформляем нотариальную доверенность на защиту и
-                            представление ваших интересов в суде, других органах и организациях. Вы начинаете жить
-                            спокойно, а мы собирать пакет документов для признания вас банкротом.
-                        </p>
-                        <span>Длительность: 0,5—1 календарных месяца.</span>
-                    </span>
+            <div class="stage__info-block">
+                <span class="stage__point">
+                    5
+                </span>
+                <span class="stage__text">
 
-                </div>
 
-                <div class="stage__info-block">
-                    <span class="stage__text">
-                        <h3>
-                            «3й этап»
-                        </h3>
-                        <p>
-                            Составляем и подаем в арбитражный суд, предусмотренные законом заявление о признании вас
-                            несостоятельным (банкротом) и приложения к нему.
-                        </p>
-                        <span>Длительность: 5 рабочих дней.</span>
-                    </span>
-                </div>
+                    <p>
+                        Получаем судебные акты о признании вас несостоятельным (банкротом) и о списании ваших
+                        долгов, а вы начинаете все с чистого листа, свободным от долгов, кредитов и других списанных
+                        долгов.
+                    </p>
+                    <span>Длительность: 0,5-1 календарных месяцев.</span>
+                </span>
+            </div>
 
-                <div class="stage__info-block">
-                    <span class="stage__text">
-                        <h3>
-                            «4й этап»
-                        </h3>
-                        <p>
-                            Контролируем процесс принятия заявления к производству и назначение финансового
-                            управляющего. Защищаем ваши интересы в судебном процессе, участвуем в собраниях кредиторов и
-                            анализируем отчеты финансового управляющего. При необходимости, осуществляем иные действия,
-                            направленные на вашу защиту. </p>
-                        <p>
-                            Получаем судебные акты о признании вас несостоятельным (банкротом) и о списании ваших
-                            долгов, а вы начинаете все с чистого листа, свободным от долгов, кредитов и других списанных
-                            долгов.
-                        </p>
-                        <span>Длительность: 4—8 календарных месяцев.</span>
-                    </span>
-                </div>
+        </article>
+    </section>
 
-            </article>
-        </section>
+    <section class="worked  top">
 
-        <footer class="footer">
-            <div class="container footer__block">
-                <div class="footer__contact contact">
-                    <h4>FL-Банкротство</h4>
-                    <span class="contact__block">
-                        <h5>Телефон:</h5>
-                        <p> +7(980)712-25-00</p>
-                    </span>
-                    <span class="contact__block">
-                        <h5>E-mail</h5>
-                        <p>info@fl-bankrotstvo.ru</p>
-                        <p>vd.balandin@yandex.ru</p>
-                    </span>
-                    <span class="contact__block">
-                        <h5>Адрес</h5>
-                        <p>Калужская область, г. Обнинск, ул. Улица, д. дом, офис, №123</p>
-                    </span>
-                </div>
+        <div class="worked__blocks">
+            <div class="worked__block border">
+                <h1 class="subtitle">
+                    О КОМПАНИИ
+                </h1>
 
-                <div class="footer__map">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2281.4894636389968!2d36.61560771546128!3d55.122210047916056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46cacd7933b5784d%3A0xc87c51dc543e4e1f!2z0JrQsNC70YPQttGB0LrQsNGPINGD0LsuLCDQntCx0L3QuNC90YHQuiwg0JrQsNC70YPQttGB0LrQsNGPINC-0LHQuy4sIDI0OTAzMA!5e0!3m2!1sru!2sru!4v1588069787684!5m2!1sru!2sru"
-                        width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""
-                        aria-hidden="false" tabindex="0"></iframe>
+                <div class="worked__about">
+                    <p>
+                        Юридическая компания «FL-Банкротство» основана в 2015 году командой единомышленников,
+                        сфокусированных на оказании квалифицированной юридической помощи гражданам, попавшим в
+                        тяжелое финансовое положение и пострадавшим от незаконных действий коллекторов и других
+                        кредитных организаций. Учреждаясь в год принятия главы «Х. Банкротство граждан» Федерального
+                        закона №127 «О несостоятельности (банкротстве)» и развиваясь параллельно с этим институтом,
+                        нами сформированы эффективные и стратегически правильные методы сопровождения процедуры
+                        несостоятельности, которые позволяют граждан максимально быстро и с сохранением их имущества
+                        избавиться от долгового ярма. Понимая социальный статус института потребительского
+                        банкротства, направленного на финансовую реабилитацию граждан попавших в экономическую
+                        кабалу, юридическая компания «FL-Банкротство» осуществляет комплексную защиту ваших
+                        интересов, а не какую-то ее часть, как то: составление заявления или сбор отдельных
+                        документов. Жизненные ситуации бывают разные, но так или иначе, ваше право на нормальную и
+                        спокойную жизнь — нас приоритет, а не способ обогащения.
+                    </p>
                 </div>
             </div>
-        </footer>
+            <div class="worked__block ">
+                <h1 class="subtitle">
+                    ОТЗЫВЫ НАШИХ КЛИЕНТОВ
+                </h1>
+
+                <div class="worked__review">
+                    <span class="arrow">
+                        <img class="left_review" src="{% static "build/img/left.png" %}">
+                    </span>
+
+                    <p class="slide-1">
+                        Юридическая компания «FL-Банкротство» основана в 2015 году командой единомышленников,
+                        сфокусированных на оказании квалифицированной юридической помощи гражданам, попавшим в
+                        тяжелое финансовое положение и пострадавшим от незаконных действий коллекторов и других
+                        кредитных организаций. Учреждаясь в год принятия главы «Х. Банкротство граждан» Федерального
+                        закона №127 «О несостоятельности (банкротстве)» и развиваясь параллельно с этим институтом,
+                        нами сформированы эффективные и стратегически правильные методы сопровождения процедуры
+                        несостоятельности, которые позволяют граждан максимально быстро и с сохранением их имущества
+                        избавиться от долгового ярма. Понимая социальный статус института потребительского
+                        банкротства, направленного на финансовую реабилитацию граждан попавших в экономическую
+                        кабалу, юридическая компания «FL-Банкротство» осуществляет комплексную защиту ваших
+                        интересов, а не какую-то ее часть, как то: составление заявления или сбор отдельных
+                        документов. Жизненные ситуации бывают разные, но так или иначе, ваше право на нормальную и
+                        спокойную жизнь — нас приоритет, а не способ обогащения.
+                    </p>
+                    <p class="slide-2">
+                        Юридическая компания «FL-Банкротство» основана в 2015 году командой единомышленников,
+                        сфокусированных на оказании квалифицированной юридической помощи гражданам, попавшим в
+                        тяжелое финансовое положение и пострадавшим от незаконных действий коллекторов и других
+                        кредитных организаций. Учреждаясь в год принятия главы «Х. Банкротство граждан» Федерального
+                        закона №127 «О несостоятельности (банкротстве)» и развиваясь параллельно с этим институтом,
+                        нами сформированы эффективные и стратегически правильные методы сопровождения процедуры
+                        несостоятельности, которые позволяют граждан
+                        интересов, а не какую-то ее часть, как то: составление заявления или сбор отдельных
+                        документов. Жизненные ситуации бывают разные, но так или иначе, ваше право на нормальную и
+                        спокойную жизнь — нас приоритет, а не способ обогащения.
+                    </p>
+                    <p class="slide-3">
+                        Юридическая компания «FL-Банкротство» основана в 2015 году командой единомышленников,
+                        сфокусированных на оказании квалифицированной юридической помощи гражданам, попавшим в
+                        тяжелое финансовое положение и пострадавшим от незаконных действий коллекторов и других
+                        кредитных организаций. Учреждаясь в год принятия главы «Х. Банкротство граждан» Федерального
+                        закона №127 «О несостоятельности (банкротстве)» и развиваясь параллельно с этим институтом,
+                        нами сформированы эффективные и стратегически правильные методы сопровождения процедуры
+                        несостоятельности, которые позволяют граждан максимально быстро и с сохранением их имущества
+                        избавиться от долгового ярма. Понимая социальный статус института потребительского
+                        банкротства, направленного на финансовую реабилитацию граждан попавших в экономическую
+
+                    </p>
+                    <p class="slide-4">
+
+                        несостоятельности, которые позволяют граждан максимально быстро и с сохранением их имущества
+                        избавиться от долгового ярма. Понимая социальный статус института потребительского
+                        банкротства, направленного на финансовую реабилитацию граждан попавших в экономическую
+                        кабалу, юридическая компания «FL-Банкротство» осуществляет комплексную защиту ваших
+                        интересов, а не какую-то ее часть, как то: составление заявления или сбор отдельных
+                        документов. Жизненные ситуации бывают разные, но так или иначе, ваше право на нормальную и
+                        спокойную жизнь — нас приоритет, а не способ обогащения.
+                    </p>
+                    <span class="arrow">
+                        <img class="right_review" src="{% static "build/img/left.png" %}">
+                    </span>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <footer class="footer">
+        <div class="footer__block">
+
+            <div class="footer__map" style="position:relative;overflow:hidden;"><a
+                    href="https://yandex.ru/maps/967/obninsk/?utm_medium=mapframe&utm_source=maps"
+                    style="color:#eee;font-size:12px;position:absolute;top:0px;">Обнинск</a><a
+                    href="https://yandex.ru/maps/967/obninsk/search/%D0%9A%D0%B0%D0%BB%D1%83%D0%B6%D1%81%D0%BA%D0%B0%D1%8F%20%D1%83%D0%BB.%20%D0%9E%D0%B1%D0%BD%D0%B8%D0%BD%D1%81%D0%BA%20%D0%9A%D0%B0%D0%BB%D1%83%D0%B6%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BE%D0%B1%D0%BB/?ll=36.617523%2C55.121556&sll=36.617523%2C55.121548&sspn=0.002822%2C0.000872&utm_medium=mapframe&utm_source=maps&z=16.07"
+                    style="color:#eee;font-size:12px;position:absolute;top:14px;">Калужская улица —
+                    Яндекс.Карты</a><iframe src="https://yandex.ru/map-widget/v1/-/C0UuaIJH" width="560" height="400"
+                    frameborder="1" allowfullscreen="true" style="position:relative;"></iframe>
+            </div>
+
+
+            <div class="footer__contact contact">
+
+                <span class="logo contact_block">
+                    <a href="#">
+                        <img src="{% static "build/img/logo.png" %}" alt="FL">
+                    </a>
+                </span>
+                <span class="contact__block">
+                    <h5>Телефон:</h5>
+                    <p> +7 (980) 712-25-00</p>
+                </span>
+                <span class="contact__block">
+                    <h5>E-mail</h5>
+                    <p>info@fl-bankrotstvo.ru</p>
+                    <p>vd.balandin@yandex.ru</p>
+                </span>
+                <span class="contact__block">
+                    <h5>Адрес</h5>
+                    <p>Калужская область, г. Обнинск, <br />
+                        ул. Улица, д. дом, офис, №123</p>
+                </span>
+                <span class="contact__block">
+                    <div class="header__social social">
+                        <a class="social__link" href="#">
+                            <img src="{% static "build/img/instagram.png" %}">
+                        </a>
+                        <a class="social__link" href="#">
+                            <img src="{% static "build/img/вконтакте.png" %}">
+                        </a>
+                        <a class="social__link" href="#">
+                            <img src="{% static "build/img/телеграмма.png" %}">
+                        </a>
+                    </div>
+                    <button class="call_button open_call">
+                        Вам перезвонить ?
+                    </button>
+                </span>
+            </div>
+
+
+        </div>
+    </footer>
     </div>
 
     <div class="call">
@@ -604,14 +741,9 @@
         </section>
     </div>
 
-    <div class="kwiz">
-        <img class="kwiz_exit" src="{% static "build/img/exit.png" %}">
-
-        <span>Пройти тест</span>
-        <a href="#ques">
-            Какие у Вас риски потерять<br /> имущество при банкротстве
-        </a>
-    </div>
+    <a href="#up" class="up">
+        <img class="up_img" src="{% static "build/img/up.png" %}">
+    </a>
 
 
 
