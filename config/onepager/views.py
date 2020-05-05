@@ -2,9 +2,9 @@ from rest_framework.response import Response
 from rest_framework import generics, status
 from rest_framework.response import Response
 from rest_framework.settings import api_settings
-
+from django.core.mail import send_mail
 from .serializers import ShortQuestionsSerializer, PollQuestionsSerializer
-
+from config.settings import EMAIL_HOST_USER
 
 # from rest_framework import pagination
 # from django_filters import rest_framework as rest_filter
@@ -39,17 +39,20 @@ class ShortQuestionsDetailView(generics.CreateAPIView):
         mail_phone = serializer.data['phone']
         mail_message = serializer.data['message']
         create_time = serializer.data['create_time']
+        mail_mail = serializer.data['email']
 
-        mail_headers = f'Заявка от {mail_name}, номер телефона: {mail_phone} от {create_time}'
+        mail_headers = f'Заявка от {mail_name}, номер телефона: {mail_phone}, {mail_mail} от {create_time}'
         mail_text = f'Заявка от {mail_name} \nномер телефона: {mail_phone} \nТут должен быть текст сообщения: {mail_message}\n\n\n ______\n Semenov Artur'
         #
-        # send_mail(mail_headers, mail_text, 'juicehqperfect@gmail.com', ['juicehq@yandex.ru'], fail_silently=False)
 
+        # send_mail(mail_headers, mail_text, 'juicehqperfect@gmail.com', ['juicehq@yandex.ru'], fail_silently=False)
+        send_mail(mail_headers, mail_text, EMAIL_HOST_USER, ['juicehq@yandex.ru'], fail_silently=False)
         headers = self.get_success_headers(serializer.data)
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
 
     def perform_create(self, serializer):
         # serializer.save(name='NEW NAME X')
+        print('qweqweqwe')
         serializer.save()
 
     def get_success_headers(self, data):
@@ -82,6 +85,8 @@ class PollQuestionsDetailView(generics.CreateAPIView):
         name = serializer.data['name']
         phone_number = serializer.data['phone_number']
         create_time = serializer.data['create_time']
+        mail_mail = serializer.data['email']
+
 
         mail_headers = f'Заявка от {name}, номер телефона: {phone_number} от {create_time}'
         mail_text = f'Заявка от: {name} \n' \
@@ -94,9 +99,10 @@ class PollQuestionsDetailView(generics.CreateAPIView):
                     f'Город обращения: {city} \n' \
                     f'Город регистрации: {registration_city} \n' \
                     f'Имя: {name} \n' \
+                    f'Mail: {mail_mail} \n' \
                     f'Номер телефона: {phone_number}' \
                     f'\n\n\n ______\n Semenov Artur'
-        # send_mail(mail_headers, mail_text, 'juicehqperfect@gmail.com', ['juicehq@yandex.ru'], fail_silently=False)
+        send_mail(mail_headers, mail_text, EMAIL_HOST_USER, ['juicehq@yandex.ru'], fail_silently=False)
 
         headers = self.get_success_headers(serializer.data)
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
