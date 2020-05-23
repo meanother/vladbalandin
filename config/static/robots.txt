@@ -1,0 +1,13 @@
+<html>
+<head></head>
+<body>
+<pre style="word-wrap: break-word; white-space: pre-wrap;">
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /onepage/short/
+Disallow: /onepage/full/
+Sitemap: https://fl-bankrotstvo.ru/sitemap.xml
+Host: https://fl-bankrotstvo.ru
+</body>
+</html>
