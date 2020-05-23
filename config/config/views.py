@@ -15,3 +15,8 @@ def sitemap(request):
 def robots(request):
     # return render(request, '/home/ubpc/promise/frontend/build/index.html')
     return render(request, 'robots.txt')
+
+
+def favicon(request):
+    # return render(request, '/home/ubpc/promise/frontend/build/index.html')
+    return render(request, 'favicon.ico')
