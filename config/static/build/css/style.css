@@ -1807,7 +1807,17 @@ body {
     font-size: 0.7em;
   }
   .questions__input[type="checkbox"] + .head__label::after {
-    top: -148px;
+    top: -159px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .questions__input[type="checkbox"] + .head__label::after {
+    top: -151px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .questions__input[type="checkbox"] + .head__label::after {
+    top: -160px;
   }
 }
 @media screen and (max-width: 351px) {
@@ -1815,6 +1825,7 @@ body {
     top: -211px;
   }
 }
+
 @media screen and (max-width: 347px) {
   .head__subblock .head__text {
     font-size: 1em;
