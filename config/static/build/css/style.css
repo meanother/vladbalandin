@@ -416,10 +416,14 @@ body {
   text-transform: uppercase;
   text-align: center;
 }
+
+.questions__answer {
+  padding-left: 20px;
+}
+
 .head__label {
+  height: 180px;
   font-size: 1em;
-  margin-left: 20px;
-  text-indent: 3em;
   text-align: center;
 }
 .head__label:hover {
@@ -658,7 +662,7 @@ body {
   height: 17px;
 }
 .questions__input[type="checkbox"] + .head__label::after {
-  left: -4px;
+  left: -30px;
   top: -158px;
   width: 15px;
   height: 15px;
@@ -1775,12 +1779,11 @@ body {
   .questions__input[type="checkbox"] + .head__label::after {
     top: -230px;
   }
-}
-@media screen and (max-width: 427px) {
+} @media screen and (max-width: 427px) {
   .questions__input[type="checkbox"] + .head__label::after {
     top: -245px;
   }
-}
+} 
 @media screen and (max-width: 414px) {
   .head__subblock .head__text {
     font-size: 1.2em;
