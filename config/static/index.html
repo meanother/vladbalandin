@@ -83,10 +83,12 @@
 
             <div class="header__block  ">
                 <div class="header__social social">
-                    <a class="social__link" href="https://www.instagram.com/fl.bankrotstvo/" onclick="ym(62635588,'reachGoal','clickx'); return true;">
+                    <a class="social__link" href="https://www.instagram.com/fl.bankrotstvo/"
+                        onclick="ym(62635588,'reachGoal','clickx'); return true;">
                         <img src="{% static "build/img/instagram.png" %}">
                     </a>
-                    <a class="social__link" href="https://vk.com/flbankrotstvo" onclick="ym(62635588,'reachGoal','vkontakte'); return true;">
+                    <a class="social__link" href="https://vk.com/flbankrotstvo"
+                        onclick="ym(62635588,'reachGoal','vkontakte'); return true;">
                         <img src="{% static "build/img/вконтакте.png" %}">
                     </a>
                     <a class="social__link" href="https://t.me/VladislavBalandin">
@@ -109,7 +111,8 @@
 
                     <img src="{% static "build/img/tel.png" %}">
                     <span>
-                        <a class="contact__item" href="tel:89206199539" onclick="ym(62635588,'reachGoal','call me'); return true;">8 (920) 619-95-39</a>
+                        <a class="contact__item" href="tel:89206199539"
+                            onclick="ym(62635588,'reachGoal','call me'); return true;">8 (920) 619-95-39</a>
                         <!--                        <a class="contact__item" href="tel:89807122500">8 (980) 712-25-00</a>-->
                     </span>
                 </div>
@@ -168,21 +171,18 @@
                         <button class="head__btn" onclick="ym(62635588,'reachGoal','fill out a form'); return true;">
                             Заполнить анкету
                         </button>
-                        <div class="questions__answer">
-                            <input class="questions__input" name="question-200" id="radio-200" type="checkbox"
-                                value="true" onclick="ym(62635588,'reachGoal','Agreement'); return true;">
-                            <label class="head__label" for="radio-200">
-                                Я хочу получить результат анализа моей
-                                ситуации с целью подачи заявления на банкротство физического лица * Ответом Вы
-                                подтверждаете согласие на обработку Персональных данных в т.ч. выражаете согласие на
-                                совершение звонка на ваш мобильный номер телефона, либо получение СМС с информацией в
-                                соответствии с ФЗ "О связи" от 07.07.2003 N 126-ФЗ. Вы можете позже отозвать такое
-                                согласие.
-                                <a class="href_for_form"
-                                    href="https://drive.google.com/file/d/1AmdgMWgL4DzmqWDp48YItlYEo0ynUf42/view?usp=sharing">Политика
-                                    конфиденциальности</a>
-                            </label>
-                        </div>
+
+                        <p class="head__label" for="radio-200">
+                            Нажав кнопку "Заполнить анкету" Вы
+                            подтверждаете согласие на обработку Персональных данных в т.ч. выражаете согласие на
+                            совершение звонка на ваш мобильный номер телефона, либо получение СМС с информацией в
+                            соответствии с ФЗ "О связи" от 07.07.2003 N 126-ФЗ. Вы можете позже отозвать такое
+                            согласие.
+                            <a class="href_for_form"
+                                href="https://drive.google.com/file/d/1AmdgMWgL4DzmqWDp48YItlYEo0ynUf42/view?usp=sharing">Политика
+                                конфиденциальности</a>
+                        </p>
+
                     </div>
 
 
@@ -793,7 +793,8 @@
                     <span class="contact__block">
                         <span>
                             <h5>Телефон:</h5>
-                            <p> <a href="tel:89206199539" onclick="ym(62635588,'reachGoal','call me'); return true;">8 (920) 619-95-39 </a></p>
+                            <p> <a href="tel:89206199539" onclick="ym(62635588,'reachGoal','call me'); return true;">8
+                                    (920) 619-95-39 </a></p>
 
                             <!--                            <p> <a href="tel:89807122500">8 (980) 712-25-00</a></p>-->
                         </span>
@@ -870,8 +871,11 @@
     <div class="background"></div>
     <script src="https://code.jquery.com/jquery-3.5.0.min.js"
         integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <script src="build/js/jquery.mask.min.js"></script>
     <script src="{% static "build/js/jquery.mask.min.js" %}"></script>
     <script src="{% static "build/js/index.js" %}"></script>
+
+
 
 </body>
 
