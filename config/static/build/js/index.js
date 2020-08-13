@@ -113,6 +113,7 @@ $(document).ready(function () {
         h.push($(this).val());
       }),
       "" === t && ((c = !1), $(".name").addClass("error")),
+      n.length < 18 && ((c = !1), $(".phone").addClass("error")),
       "" === n && ((c = !1), $(".phone").addClass("error")),
       "" === o && ((c = !1), $(".city").addClass("error")),
       "" === i && ((c = !1), $(".regist").addClass("error")),

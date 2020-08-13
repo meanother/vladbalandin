@@ -131,6 +131,7 @@ body {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+  padding-bottom: 5px;
 }
 .social__link {
   display: -webkit-box;
