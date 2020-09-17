@@ -3,18 +3,11 @@ from rest_framework import generics, status
 from rest_framework.response import Response
 from rest_framework.settings import api_settings
 from django.core.mail import send_mail
-from .serializers import ShortQuestionsSerializer, PollQuestionsSerializer
+from .serializers import ShortQuestionsSerializer, PollQuestionsSerializer, QuizQuestionsSerializer
 from config.settings import EMAIL_HOST_USER, EMAIL_TO
-
-# from rest_framework import pagination
-# from django_filters import rest_framework as rest_filter
-# from rest_framework import filters
-
-# Create your views here.
 
 
 class ShortQuestionsDetailView(generics.CreateAPIView):
-    # permission_classes = [permissions.IsAuthenticated]
     serializer_class = ShortQuestionsSerializer
 
     def create(self, request, *args, **kwargs):
@@ -28,17 +21,18 @@ class ShortQuestionsDetailView(generics.CreateAPIView):
         mail_mail = serializer.data['email']
 
         mail_headers = f'Новая заявка: {mail_name}, номер телефона: {mail_phone} дата: {create_time}'
-        mail_text = f'Заявка от {mail_name} \nномер телефона: {mail_phone}\n@Mail: {mail_mail} \nДополнительный текст сообщения: {mail_message}\n\n\n ______\n @fl-bankrotstvo.ru'
-        #
+        mail_text = f'Заявка от {mail_name} \n' \
+                    f'номер телефона: {mail_phone}\n' \
+                    f'@Mail: {mail_mail} \n' \
+                    f'Дополнительный текст сообщения: {mail_message}\n' \
+                    f'\n\n ______\n @fl-bankrotstvo.ru'
 
-        # send_mail(mail_headers, mail_text, 'juicehqperfect@gmail.com', ['juicehq@yandex.ru'], fail_silently=False)
         send_mail(mail_headers, mail_text, EMAIL_HOST_USER, EMAIL_TO, fail_silently=False)
         headers = self.get_success_headers(serializer.data)
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
 
     def perform_create(self, serializer):
         # serializer.save(name='NEW NAME X')
-        print('qweqweqwe')
         serializer.save()
 
     def get_success_headers(self, data):
@@ -49,18 +43,12 @@ class ShortQuestionsDetailView(generics.CreateAPIView):
 
 
 class PollQuestionsDetailView(generics.CreateAPIView):
-    # permission_classes = [permissions.IsAuthenticated]
     serializer_class = PollQuestionsSerializer
 
-    # queryset = MailSend.objects.all()
-
     def create(self, request, *args, **kwargs):
-        print(request.data)
-
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         self.perform_create(serializer)
-
         summ = serializer.data['summ']
         amount = serializer.data['amount']
         income = serializer.data['income']
@@ -72,7 +60,6 @@ class PollQuestionsDetailView(generics.CreateAPIView):
         phone_number = serializer.data['phone_number']
         create_time = serializer.data['create_time']
         mail_mail = serializer.data['email']
-
 
         mail_headers = f'Новая заявка: {name}, номер телефона: {phone_number} дата: {create_time}'
         mail_text = f'Заявка от: {name} \n' \
@@ -94,6 +81,50 @@ class PollQuestionsDetailView(generics.CreateAPIView):
 
     def perform_create(self, serializer):
         # serializer.save(name='NEW NAME X')
+        serializer.save()
+
+    def get_success_headers(self, data):
+        try:
+            return {'Location': str(data[api_settings.URL_FIELD_NAME])}
+        except (TypeError, KeyError):
+            return {}
+
+
+class QuizQuestionsDetailView(generics.CreateAPIView):
+    serializer_class = QuizQuestionsSerializer
+
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+
+        header = f"Квиз, новая заявка! От: {serializer.data['name']}," \
+                 f" номер телефона: {serializer.data['phone_number']}," \
+                 f" дата: {serializer.data['create_time']}"
+
+        body = f"Данные:\n" \
+               f"Имя: {serializer.data['name']}\n" \
+               f"Номер телефона: {serializer.data['phone_number']}\n" \
+               f"e-mail: {serializer.data['email']}\n" \
+               f"Город: {serializer.data['city']}\n" \
+               f"Общая сумма задолженности: {serializer.data['sum']}\n" \
+               f"Кол-во кредиторов: {serializer.data['amount']}\n" \
+               f"Просрочки по платежам: {serializer.data['has_delay']}\n" \
+               f"Официальный доход: {serializer.data['income']}\n" \
+               f"Дети: {serializer.data['has_child']}\n" \
+               f"Брак: {serializer.data['is_marriage']}\n" \
+               f"Собственность: {serializer.data['property']}\n" \
+               f"Собственность, приобретенная в браке: {serializer.data['own_per_marriage']}\n" \
+               f"Сделки с имуществом: {serializer.data['property_transaction']}\n" \
+               f"Ипотека или залог: {serializer.data['pledge']}\n" \
+               f"\n\n ______\n @fl-bankrotstvo.ru"
+
+        send_mail(header, body, EMAIL_HOST_USER, EMAIL_TO, fail_silently=False)
+
+        headers = self.get_success_headers(serializer.data)
+        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+
+    def perform_create(self, serializer):
         serializer.save()
 
     def get_success_headers(self, data):

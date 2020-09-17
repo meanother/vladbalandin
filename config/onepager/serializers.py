@@ -4,25 +4,18 @@ from .models import *
 
 
 class ShortQuestionsSerializer(serializers.ModelSerializer):
-    # owner = serializers.ReadOnlyField(source='owner.username')
-
     class Meta:
         model = ShortQuestions
-        # lookup_field = 'slug'
         fields = '__all__'
 
 
 class PollQuestionsSerializer(serializers.ModelSerializer):
-    # owner = serializers.ReadOnlyField(source='owner.username')
-
     class Meta:
         model = PollQuestions
-        # lookup_field = 'slug'
         fields = '__all__'
 
-# class PromiseListSerializer(serializers.ModelSerializer):
-#     owner = serializers.ReadOnlyField(source='owner.username')
-#
-#     class Meta:
-#         model = Promise
-#         fields = '__all__'
+
+class QuizQuestionsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = QuizQuestions
+        fields = '__all__'
