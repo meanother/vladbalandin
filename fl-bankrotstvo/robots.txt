@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /onepage/short/
+Disallow: /onepage/full/
+Sitemap: https://fl-bankrotstvo.ru/sitemap.xml
+Host: https://fl-bankrotstvo.ru

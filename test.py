@@ -82,11 +82,11 @@ short_data = {
 
 
 
-post = requests.post('http://127.0.0.1:8000/onepage/short/', data=short_data)
-print(post.text)
-post = requests.post('http://127.0.0.1:8000/onepage/full/', data=poll_data)
-print(post.text)
-post = requests.post('http://127.0.0.1:8000/onepage/quiz/', data=quiz_data)
-print(post.text)
+# post = requests.post('http://127.0.0.1:8000/onepage/short/', data=short_data)
+# print(post.text)
+# post = requests.post('http://127.0.0.1:8000/onepage/full/', data=poll_data)
+# print(post.text)
+# post = requests.post('https://fl-bankrotstvo.ru/onepage/quiz/', data=quiz_data)
+# print(post.text)
 
 
