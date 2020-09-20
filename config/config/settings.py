@@ -37,6 +37,9 @@ SECRET_KEY = '+m9y9xsilziy=%d22p15^ld+pswxet!l3sx0+!=(oj36ay^4nr'
 # Application definition
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+    ),
     'PAGE_SIZE': 100,
     'DATETIME_FORMAT': '%d.%m.%Y %H:%M:%S',
 
