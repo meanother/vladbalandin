@@ -75,7 +75,7 @@ $(document).ready(function () {
           t.append("email", l),
           t.append("message", s);
         let n = { method: "POST", body: t };
-        (await fetch("https://fl-bankrotstvo.ru/onepage/short/", n)).ok &&
+        (await fetch("http://194.58.118.237:9000/onepage/short/", n)).ok &&
           ($(".form").fadeOut(300),
           $(".good__resp").fadeIn(300).css("display", "flex"));
       }
@@ -138,7 +138,7 @@ $(document).ready(function () {
         e.append("email", d),
         e.append("name", t);
       let a = { method: "POST", body: e };
-      (await fetch("https://fl-bankrotstvo.ru/onepage/full/", a)).ok &&
+      (await fetch("http://194.58.118.237:9000/onepage/full/", a)).ok &&
         ($(".item-" + u).fadeOut(1),
         u++,
         $(".item-" + u)
