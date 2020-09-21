@@ -82,20 +82,23 @@ short_data = {
 
 
 
-# post = requests.post('https://api.fl-bankrotstvo.ru/onepage/short/', data=short_data)
-# print(post.text)
-# post = requests.post('https://api.fl-bankrotstvo.ru/onepage/full/', data=poll_data)
-# print(post.text)
+post = requests.post('https://api.fl-bankrotstvo.ru/onepage/short/', data=short_data)
+print(post.text)
+post = requests.post('https://api.fl-bankrotstvo.ru/onepage/full/', data=poll_data)
+print(post.text)
+post = requests.post('https://api.fl-bankrotstvo.ru/onepage/quiz/', data=quiz_data)
+print(post.text)
 
-from time import sleep
 
-for i in range(15):
-    try:
-        post = requests.post('https://api.fl-bankrotstvo.ru/onepage/quiz/', data=quiz_data)
-        print(post.text)
-    except Exception as e:
-        print(e)
-    sleep(2)
+# from time import sleep
+#
+# for i in range(15):
+#     try:
+#         post = requests.post('https://api.fl-bankrotstvo.ru/onepage/quiz/', data=quiz_data)
+#         print(post.text)
+#     except Exception as e:
+#         print(e)
+#     sleep(2)
 
 #194-58-118-237
 
