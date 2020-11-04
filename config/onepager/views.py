@@ -3,7 +3,7 @@ from rest_framework import generics, status
 from rest_framework.response import Response
 from rest_framework.settings import api_settings
 from django.core.mail import send_mail
-from .serializers import ShortQuestionsSerializer, PollQuestionsSerializer, QuizQuestionsSerializer
+from .serializers import ShortQuestionsSerializer, PollQuestionsSerializer, QuizQuestionsSerializer, NewQuizQuestionsSerializer
 from config.settings import EMAIL_HOST_USER, EMAIL_TO
 
 
@@ -98,7 +98,7 @@ class QuizQuestionsDetailView(generics.CreateAPIView):
         serializer.is_valid(raise_exception=True)
         self.perform_create(serializer)
 
-        header = f"Квиз, новая заявка! От: {serializer.data['name']}," \
+        header = f"New Quiz, новая заявка! От: {serializer.data['name']}," \
                  f" номер телефона: {serializer.data['phone_number']}," \
                  f" дата: {serializer.data['create_time']}"
 
@@ -109,6 +109,49 @@ class QuizQuestionsDetailView(generics.CreateAPIView):
                f"Город: {serializer.data['city']}\n" \
                f"Общая сумма задолженности: {serializer.data['sum']}\n" \
                f"Кол-во кредиторов: {serializer.data['amount']}\n" \
+               f"Просрочки по платежам: {serializer.data['has_delay']}\n" \
+               f"Официальный доход: {serializer.data['income']}\n" \
+               f"Дети: {serializer.data['has_child']}\n" \
+               f"Брак: {serializer.data['is_marriage']}\n" \
+               f"Собственность: {serializer.data['property']}\n" \
+               f"Собственность, приобретенная в браке: {serializer.data['own_per_marriage']}\n" \
+               f"Сделки с имуществом: {serializer.data['property_transaction']}\n" \
+               f"Ипотека или залог: {serializer.data['pledge']}\n" \
+               f"\n\n ______\n @fl-bankrotstvo.ru"
+
+        send_mail(header, body, EMAIL_HOST_USER, EMAIL_TO, fail_silently=False)
+
+        headers = self.get_success_headers(serializer.data)
+        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+
+    def perform_create(self, serializer):
+        serializer.save()
+
+    def get_success_headers(self, data):
+        try:
+            return {'Location': str(data[api_settings.URL_FIELD_NAME])}
+        except (TypeError, KeyError):
+            return {}
+
+
+class NewQuizQuestionsDetailView(generics.CreateAPIView):
+    serializer_class = NewQuizQuestionsSerializer
+
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+
+        header = f"Квиз, новая заявка! От: {serializer.data['name']}," \
+                 f" номер телефона: {serializer.data['phone_number']}," \
+                 f" дата: {serializer.data['create_time']}"
+
+        body = f"Данные:\n" \
+               f"Имя: {serializer.data['name']}\n" \
+               f"Номер телефона: {serializer.data['phone_number']}\n" \
+               f"e-mail: {serializer.data['email']}\n" \
+               f"Город: {serializer.data['city']}\n" \
+               f"Общая сумма задолженности: {serializer.data['sum']}\n" \
                f"Просрочки по платежам: {serializer.data['has_delay']}\n" \
                f"Официальный доход: {serializer.data['income']}\n" \
                f"Дети: {serializer.data['has_child']}\n" \
