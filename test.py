@@ -81,6 +81,22 @@ short_data = {
 }
 
 
+new_quiz_data = {
+    'sum': 'от 300 000 до 700 000 рублей',
+    'amount': 'от 1 до 3',
+    'has_delay': 'Да, менее 3-х месяцев',
+    'income': 'от 20 000 до 30 000 рублей',
+    'has_child': 'Нет',
+    'is_marriage': 'Нет, в разводе',
+    'property': 'Жилой дом, Коммерческая недвижимость, Единственное жилье',
+    'own_per_marriage': 'Нет',
+    'property_transaction': 'Нет',
+    'pledge': 'Нет',
+    'name': 'Артур',
+    'city': 'Обнинск',
+    'phone_number': '8 222 333 11 22',
+    'email': 'www@nnn.com',
+}
 
 post = requests.post('https://api.fl-bankrotstvo.ru/onepage/short/', data=short_data)
 print(post.text)
@@ -88,7 +104,8 @@ post = requests.post('https://api.fl-bankrotstvo.ru/onepage/full/', data=poll_da
 print(post.text)
 post = requests.post('https://api.fl-bankrotstvo.ru/onepage/quiz/', data=quiz_data)
 print(post.text)
-
+post = requests.post('https://api.fl-bankrotstvo.ru/onepage/new_quiz/', data=new_quiz_data)
+print(post.text)
 
 # from time import sleep
 #
